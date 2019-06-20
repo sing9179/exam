@@ -15,25 +15,34 @@ import java.util.Scanner;
  */
 public class ArithmeticBase 
 {
- public double x,y;
-    double calculate(double x, double y) 
-        {
-        Scanner sc =new Scanner(System.in);
-        System.out.println("enter String");
-        String s= sc.next();
-        switch (s.toUpperCase()) 
-        {
-            case "PLUS":
-                return x + y;
-            case "MINUS":
-                return x - y;
-            case "TIMES":
-                return x * y;
-            case "DIVIDE":
-                return x / y;
-            default:
-                throw new AssertionError("Unknown operations " + this);
-        }
+
+    double calculate() {
+        return 0;
+       
     }
-   
+    public enum Base{Plus, Minus, TIMES, Divide};
+    private Base value;
+    public enum Add{"x+y","x-y", "x*y", "x/y"};
+    private Add  user;
+
+    public ArithmeticBase(Base va, Add users)
+    {
+       this.value = va;
+       this.user = users;
+    }
+
+
+    /**
+     * @return the value
+     */
+    public Base getValue() {
+        return value;
+    }
+
+    /**
+     * @param value the value to set
+     */
+    public void setValue(Base value) {
+        this.value = value;
+    }
 }
